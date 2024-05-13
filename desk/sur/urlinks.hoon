@@ -3,9 +3,17 @@
 ::
 |%
 +$  action
-  $%  [%rise ~]
+  $%  
+    [%add-link ~]
+    [%delete-link ~]
   ==
 +$  update
   $%  [%risen values=(list @)]
+  ==
+
++$  link
+  $:
+    url=@t
+    text=@t
   ==
 --
