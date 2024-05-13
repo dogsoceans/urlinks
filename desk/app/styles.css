@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    font-family: 'DM Sans', sans-serif; 
+    font-weight: 400;
+    margin: 0px;
+    padding: 0px;
+}
+
+.content-container {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    align-items: center;
+}
+
+.header {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    margin-top: 10px;
+
+}
+.header-buttons{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.copy-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255); /* White text color */
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    padding: 0px;
+    border-radius: 8px;
+    height: min-content;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+}
+
+.copy-container:hover {
+    background-color: #ffffff; /* Changes background to white on hover */
+    color: #000000; /* Changes text color to black on hover */
+    cursor: pointer;
+}
+
+.copy-container p {
+    margin-left: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    }
+
+
+    .copy-container:hover .copy-icon path,
+    .copy-container:hover .copy-icon rect {
+        stroke: rgb(0, 0, 0); /* Change stroke color on hover */
+        transition: stroke 0.3s ease; /* Smooth transition for stroke color */
+    }
+.settings {
+    margin-right: 6px;
+}
+
+.settings svg {
+    fill: #000000; 
+    transition: fill 0.3s ease; 
+}
+
+.settings:hover svg {
+    fill: #ffffff; 
+}
+
+
+
+
+.profile-pic {
+    width: 100px;
+    height: 100px;  
+    border-radius: 50%;
+    overflow: hidden; 
+    flex-shrink: 0;
+}
+.profile-name {
+    padding: 20px 20px 20px 20px;
+
+}
+
+.link-container {
+    width: 100% ;
+}
+
+
+.add-link {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 10px 20px 10px;
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 8px;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    border-radius: 100px;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+
+}
+
+.add-link:hover {
+    background-color: #ffffff; /* Changes the background to white on hover */
+    color: #000000; /* Changes text color to black on hover */
+    border-color: #ffffff; /* Keeps border color consistent with background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow around the button */
+}
+
+
+.link {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 10px 20px 10px;
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 8px;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    transition: box-shadow 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99), 
+                border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99), 
+                transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99), 
+                background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99);
+}
+
+.link:hover {
+    background-color: #ffffff; /* Changes the background to white on hover */
+    color: #000000; /* Changes text color to black on hover */
+    border-color: #ffffff; /* Keeps border color consistent with background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow around the button */
+}
+
+.link p {
+    margin:0;
+
+}
+
+.link-maker {
+    display:flex;
+    flex-direction: row;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 8px;
+
+}
+.link-maker .inputs {
+    display:flex;
+    flex-direction: column;
+    background: transparent;
+    border-radius: 8px;
+    width: 100%;
+
+}
+
+.link-maker input {
+    width: 100%;         
+    padding: 10px 0px 10px 30px;
+    text-align: center;   
+    border: none;
+    outline: none; 
+    color:#ffffff
+
+}
+
+.link-maker .link-name {
+    margin: 8px 0px 0px 0px;
+    border-bottom: 1px dotted #ccc;
+    background-color: transparent;
+}
+.link-maker .link-url {
+    margin: 0px 0px 8px 0px;
+    background-color: transparent;
+    color
+}
+
+.link-maker button {
+    background: transparent;
+    color: #fff;
+    border:none;
+    padding: 0px; /* Adjust padding to better fit button's content */
+    font-family: 'DM Sans', sans-serif; /* Maintain font consistency */
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99);
+    display: block; /* Ensure the button spans the full width of its container */
+}
+
+
+
+/* Weight 300 */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/dmsans/v14/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2) format('woff2');
+}
+
+/* Weight 500 */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/dmsans/v14/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2) format('woff2');
+}
+
+/* Weight 700 */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/dmsans/v14/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2) format('woff2');
+}   
