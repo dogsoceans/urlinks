@@ -4,7 +4,7 @@
 |%
 +$  action
   $%  
-    [%add-link ~]
+    [%add-link label=@t url=@t]
     [%delete-link ~]
   ==
 +$  update

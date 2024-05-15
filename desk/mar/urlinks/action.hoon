@@ -1,11 +1,11 @@
-  ::  /mar/links-action
+  ::  /mar/urlinks-action
 ::::
 ::
-/-  links
-|_  =action:links
+/-  urlinks
+|_  =action:urlinks
 ++  grab
   |%
-  ++  noun  action:links
+  ++  noun  action:urlinks
   --
 ++  grow
   |%

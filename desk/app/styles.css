@@ -19,7 +19,7 @@ body {
     align-items: center;
 }
 
-.header {
+header {
     display:flex;
     flex-direction: column;
     justify-content: center;

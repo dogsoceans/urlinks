@@ -1,11 +1,11 @@
-  ::  /mar/links-update
+  ::  /mar/urlinks-update
 ::::
 ::
 /-  urlinks
 |_  =update:urlinks
 ++  grab
   |%
-  ++  noun  update:links
+  ++  noun  update:urlinks
   --
 ++  grow
   |%
