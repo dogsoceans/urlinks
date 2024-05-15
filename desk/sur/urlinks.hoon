@@ -13,7 +13,7 @@
 
 +$  link
   $:
+    label=@t
     url=@t
-    text=@t
   ==
 --

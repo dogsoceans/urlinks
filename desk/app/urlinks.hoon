@@ -98,7 +98,7 @@
 ^-  [(list card) _state] ::removed list card cant poke  now
 ?+  -.act  `state
     %add-link
-  =/  newlink=link  [label.act text.act]
+  =/  newlink=link  [label.act url.act]
   =/  newlinks=(list link)  (snoc links newlink)
   =/  new-state  state(links newlinks)
   `new-state
@@ -109,7 +109,7 @@
 ^-  [_state]
 ?+  -.act  state
     %add-link
-  =/  newlink=link  [label.act text.act]
+  =/  newlink=link  [label.act url.act]
   =/  newlinks=(list link)  (snoc links newlink)
   =/  new-state  state(links newlinks)
   new-state
@@ -165,17 +165,36 @@
     %'POST'
   =/  action-parsed  (action-parser body)
   ?+    site.request-line  
-    ?~  act-p  `state
-    :_  (action-handler2 act-p)
+    ?~  action-parsed  `state
+    :_  (action-handler2 action-parsed)
       (send [202 ~ %json [%o p=[n=[p='message' q=[%s p='Post request successful']] l=~ r=~]]])
-    [%apps %urlinks %add-link ~]
-  =/  new-state  (action-handler2 action-parsed)
+    [%apps %urlinks %link-maker ~]
+  ~&  >  action-parsed
+  ?~  action-parsed  `state
+  =/  new-state=_state  (action-handler2 `action`action-parsed)
   :_  new-state
-    (send [200 ~ [%manx (stateful-component newstate)]])
-  
+    (send [200 ~ [%manx (render-list new-state)]])
+  ==
 ==
 ::
-++  list
+
+++  render-list
+  |:  new-state=`_state`state
+  ^-  manx
+  =/  new-links  links.new-state
+  ;div  ::strange how this works, fix so it matches home.html
+    ;*  
+    %+  turn  new-links
+    |=  q=[label=@t url=@t] 
+    ^-  manx
+    ;div.link
+      ; {(trip label.q)}
+      ;a(href "{<url.q>}");
+    ==
+  ==
+
+
+
 ::
 ++  check-icon
 ^-  manx
@@ -248,7 +267,7 @@
     ;input(class "link-name", type "text", name "label", value "", placeholder "Name");
     ;input(class "link-url", type "text", name "url", value "", placeholder "URL");
   ==
-  ;button(type "submit", hx-post "urlinks/link-maker", hx-include="closest .link-maker", name "send-add-link", value "send-add-link")
+  ;button(type "submit", hx-post "urlinks/link-maker", hx-include "closest .link-maker", name "send-add-link", value "send-add-link", hx-target ".link-list-target", hx-swap "beforeend")
     ;+  check-icon
   ==
 ==
@@ -281,6 +300,7 @@
     ;div(class "add-link", hx-trigger "click", hx-get "urlinks/add-link", hx-target ".link-list-target", hx-swap "beforeend")
       ; add link
     ==
+
     ;div.link-list-target;
   ==
 
