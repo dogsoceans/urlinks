@@ -1,9 +1,9 @@
-:~  title+'urlinks'
-    info+'A page of ur links you can share with friends and put in your bio'
+:~  title+'urLinks'
+    info+'urLinks: Share urLinks, make a list of your public links to share with friends!'
     color+0xe4.9b0f
-    image+''
+    image+'https://i.imgur.com/9YXlCJt.png'
     version+[0 0 1]
-    website+'https://urbit.org/'
+    website+'https://github.com/dogsoceans/urlinks'
     license+'MIT'
     site+/apps/urlinks
 ==

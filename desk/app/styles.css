@@ -82,18 +82,23 @@ header {
     fill: #ffffff; 
 }
 
+.bio {
+  font-size:  15px;
+}
 
 
-
-.profile-pic {
+.image {
     width: 100px;
     height: 100px;  
     border-radius: 50%;
     overflow: hidden; 
     flex-shrink: 0;
 }
+.image img {
+    width: 100%
+  }
 .profile-name {
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px 10px 20px;
 
 }
 
@@ -164,6 +169,7 @@ header {
     border: 2px solid #fff;
     color: #fff;
     border-radius: 8px;
+    margin: 20px 0;
 
 }
 .link-maker .inputs {
@@ -177,7 +183,7 @@ header {
 
 .link-maker input {
     width: 100%;         
-    padding: 10px 0px 10px 30px;
+    padding: 10px 0px 10px 0px;
     text-align: center;   
     border: none;
     outline: none; 
@@ -193,20 +199,27 @@ header {
 .link-maker .link-url {
     margin: 0px 0px 8px 0px;
     background-color: transparent;
-    color
 }
 
-.link-maker button {
-    background: transparent;
+.link-maker .add-button {
+    background-color: transparent;
     color: #fff;
     border:none;
-    padding: 0px; /* Adjust padding to better fit button's content */
-    font-family: 'DM Sans', sans-serif; /* Maintain font consistency */
-    cursor: pointer;
+    padding: 0px;
+    font-family: 'DM Sans', sans-serif; 
     transition: all 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99);
-    display: block; /* Ensure the button spans the full width of its container */
+    display: block;
 }
 
+.link-maker .delete-button {
+    background-color: transparent;
+    color: #fff;
+    border:none;
+    padding: 0px;
+    font-family: 'DM Sans', sans-serif; 
+    transition: all 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99);
+    display: block;
+}
 
 
 /* Weight 300 */
