@@ -238,7 +238,7 @@
        [%apps %urlinks %link-maker-settings2 ~]
     ?.  authenticated.inbound-request
       :_  state 
-      (send [404 ~ [%plain "404 - Not Found"]])
+      (send [404 ~ [%plain "404 - Not Found"]]) 
     ?~  action-parsed  `state
     =/  new-state=_state  (action-handler2 `action`action-parsed)
     :_  new-state
@@ -410,9 +410,10 @@ counter  +(counter)
   ^-  manx
   =/  new-links  links.new-state
   =/  last-link  (rear new-links)
-  ;div.link
-    ; {(trip label.last-link)}
-    ;a(href "{(trip url.last-link)}", target "_blank");
+  ;a(href "{(trip url.last-link)}", target "_blank")
+    ;div.link
+      ; {(trip label.last-link)}
+    ==
   ==
 
 
@@ -472,7 +473,7 @@ counter  +(counter)
   ;header
     ;div.header-buttons
       ;div(class "copy-container", id "copyButton")
-      copy sharable url
+      copy shareable url
       ;+  copy-icon
       ==
       ;div(class "settings")
